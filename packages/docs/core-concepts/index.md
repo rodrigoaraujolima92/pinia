@@ -169,3 +169,23 @@ const { name, doubleCount } = storeToRefs(store)
 const { increment } = store
 </script>
 ```
+# Use Store in Optional API for Vue 3
+
+Acessing store in Vue 3 using Optional API
+
+```vue
+<script>
+import { useCartStore } from '@/store'
+export default {
+  setup(){
+    const cartStore = useCartStore()
+    return { cartStore }
+  },
+  methods: {
+    getCartItems(){
+      let cartItens = this.cartStore.getItems()
+      // ... your logic
+    }
+  }
+}
+```
